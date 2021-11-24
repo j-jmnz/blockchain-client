@@ -1,0 +1,8 @@
+query GetBlocks {
+    blocks {
+        hash
+        height
+        time
+        block_index
+    }
+}

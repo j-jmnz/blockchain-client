@@ -1,0 +1,63 @@
+query GetBlock($hash: String!) {
+    block(hash: $hash) {
+        hash
+        ver
+        prev_block
+        mrkl_root
+        time
+        bits
+        next_block
+        fee
+        nonce
+        n_tx
+        size
+        block_index
+        main_chain
+        height
+        weight
+        tx {
+            hash
+            ver
+            vin_sz
+            vout_sz
+            size
+            weight
+            fee
+            relayed_by
+            lock_time
+            double_spend
+            time
+            block_index
+            block_height
+            inputs {
+                witness
+                script
+                index
+                prev_out {
+                    spent
+                    script
+                    spending_outpoints {
+                        n
+                    }
+                    addr
+                    n
+                    type
+                }
+                sequence
+            }
+            out {
+                type
+                spent
+                spending_outpoints {
+                    n
+                }
+                n
+                script
+                addr
+                value
+                tx_index
+            }
+            tx_index
+        }
+    }
+}

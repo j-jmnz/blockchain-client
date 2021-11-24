@@ -1,0 +1,10 @@
+overwrite: true
+schema: 'http://localhost:3001/graphql'
+documents: 'src/app/**/*.graphql'
+generates:
+    src/app/generated/graphql.ts:
+        plugins:
+            - typescript
+            - typescript-operations
+            - typescript-rtk-query:
+                  importBaseApiFrom: '../api'
